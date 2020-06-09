@@ -5,7 +5,6 @@
     flex-direction: column;
     justify-content: center;
     padding: 0px 30px;
-    min-height: calc(100vh - 200px); /* El ancho será igual al tamaño de todo el height menos 200px (100px del header + 100px del footer) */
   }
   
   .register__container {
@@ -19,7 +18,6 @@
     justify-content: space-around;
     min-height: 600px;
     padding: 60px 68px 40px;
-    width: 300px;
   }
   
   .register__container--form {

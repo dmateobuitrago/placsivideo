@@ -6,7 +6,7 @@ import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
 
 const Home = ({mylist, trends, originals}) => {
-    
+
     return (
         <div className="app">
             <Search />
@@ -18,6 +18,7 @@ const Home = ({mylist, trends, originals}) => {
                             return(
                                 <CarouselItem
                                     key={item.id}
+                                    isInMyList={true}
                                     {...item}
                                 />
                             )
@@ -33,6 +34,7 @@ const Home = ({mylist, trends, originals}) => {
                             return(
                                 <CarouselItem
                                     key={item.id}
+                                    isInMyList={false}
                                     {...item}
                                 />
                             )
@@ -48,6 +50,7 @@ const Home = ({mylist, trends, originals}) => {
                             return(
                                 <CarouselItem
                                     key={item.id}
+                                    isInMyList={false}
                                     {...item}
                                 />
                             )

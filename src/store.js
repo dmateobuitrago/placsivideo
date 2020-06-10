@@ -3,7 +3,7 @@ import reducer from './reducers';
 
 const initalState = {
     "user":{},
-    "isPlaying": {},
+    "playing": {},
     "mylist": [],
     "trends": [
         {

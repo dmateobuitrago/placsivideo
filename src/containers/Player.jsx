@@ -38,8 +38,6 @@ const Player = props => {
 }
 
 const mapStateToProps = state => {
-    console.log('mapStateToProps')
-    console.log(state)
     return {
         playing: state.playing
     }

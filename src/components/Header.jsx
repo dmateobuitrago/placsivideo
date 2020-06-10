@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState}from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router'
+import { useLocation } from 'react-router-dom'
 import {logoutRequest} from '../actions'
+import classNames from 'classnames';
 import '../assets/styles/components/Header.scss'
 import logo from '../assets/static/logo-platzi-video-BW2.png';
 import userIcon from '../assets/static/user-icon.png';
@@ -12,13 +14,25 @@ const Header = props => {
     const {user} = props;
     const hasUser = Object.keys(user).length > 0
 
+    const location = useLocation();
+
+    const isLoginOrRegister = location.pathname === "/login" || location.pathname === "/register"
+
+    
+    const headerClasses = classNames({
+        header: true,
+        isLoginOrRegister: isLoginOrRegister
+    })
+
+
+
     const handleLogout = () => {
-        console.log('d')
         props.logoutRequest({})
         props.history.push('/login')
     }
+
     return (
-        <header className="header">
+        <header className={headerClasses}>
             <Link to="/">
                 <img className="header__img" src={logo} alt="Platzi Video" />
             </Link>

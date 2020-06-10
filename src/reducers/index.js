@@ -32,7 +32,7 @@ const reducer = (state, action) => {
             }
         case 'SEARCH_REQUEST':
             const allvideos = [...state.originals,...state.trends]
-            const findResult = allvideos.filter(item => item.title.includes(action.payload))
+            const findResult = allvideos.filter(item => item.title.toLowerCase().includes(action.payload.toLowerCase()))
             return {
                 ...state,
                 searchResults: findResult,

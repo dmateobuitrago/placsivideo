@@ -5,6 +5,8 @@ const initalState = {
     "user":{},
     "playing": {},
     "mylist": [],
+    "searchResults": [],
+    "searchTerm": "",
     "trends": [
         {
             "id": 2,

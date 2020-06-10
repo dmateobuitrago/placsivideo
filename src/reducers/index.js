@@ -30,6 +30,14 @@ const reducer = (state, action) => {
                 ...state,
                 playing: state.originals.find(item => item.id === Number(action.payload)) || state.trends.find(item => item.id === Number(action.payload)) || []
             }
+        case 'SEARCH_REQUEST':
+            const allvideos = [...state.originals,...state.trends]
+            const findResult = allvideos.filter(item => item.title.includes(action.payload))
+            return {
+                ...state,
+                searchResults: findResult,
+                searchTerm: action.payload,
+            }
         default:
             return state;
     }

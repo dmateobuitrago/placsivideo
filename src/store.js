@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { createStore, compose } from 'redux';
 import reducer from './reducers';
 
 const initalState = {
@@ -167,4 +167,6 @@ const initalState = {
     ]
 }
 
-export const store = createStore(reducer, initalState)
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+export const store = createStore(reducer, initalState, composeEnhancers())
